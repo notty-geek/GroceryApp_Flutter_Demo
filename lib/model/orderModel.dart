@@ -1,4 +1,4 @@
-import 'package:groceryapptesting/model/productModel.dart';
+import 'package:grocerry_app/model/productModel.dart';
 
 class productOrder {
 
