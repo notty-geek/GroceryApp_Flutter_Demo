@@ -1,7 +1,11 @@
 import 'package:grocerry_app/model/orderModel.dart';
 class GroceryCart{
 
-  late List<productOrder> _cartOrders;
+  List<productOrder> _cartOrders;
+
+  GroceryCart(){
+    _cartOrders = new List();
+  }
 
   void addCartOrder(productOrder order){
     _cartOrders.add(order);
