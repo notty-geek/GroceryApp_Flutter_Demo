@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/GroceryOrder.dart';
+import 'package:groceryapptesting/models/GroceryOrder.dart';
 
 class OrderWidget extends StatelessWidget {
   final Order _order;

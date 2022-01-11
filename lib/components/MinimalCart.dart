@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapptesting/bloc/CartBloc.dart';
-import '../model/GroceryCart.dart';
+import 'package:groceryapptesting/models/GroceryCart.dart';
 
 class MinimalCart extends StatelessWidget {
   final double _gridSize;
