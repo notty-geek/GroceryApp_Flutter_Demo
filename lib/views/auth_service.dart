@@ -41,7 +41,7 @@ class AuthService {
     });
   }
 
-  //Facebook SignIn
+  //fb signin
 
   fbSignIn() async {
     final fb = FacebookLogin();

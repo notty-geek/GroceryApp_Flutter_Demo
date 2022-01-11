@@ -1,6 +1,6 @@
-# grocerry_app
+# groceryapptesting
 
-Grocerry Application Project
+A new Flutter project.
 
 ## Getting Started
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'auth_service.dart';
+import 'package:groceryapptesting/views/auth_service.dart';
 import 'package:groceryapptesting/main.dart';
-import 'Home.dart';
+import 'package:groceryapptesting/views/Home.dart';
 
 class OrderView extends StatefulWidget {
   @override
