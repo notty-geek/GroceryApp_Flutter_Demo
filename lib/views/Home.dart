@@ -3,8 +3,8 @@ import 'package:groceryapptesting/bloc/CartBloc.dart';
 import 'package:groceryapptesting/components/CartManager.dart';
 import 'package:groceryapptesting/components/CategoryDropMenu.dart';
 
-import '../../../../../Downloads/groceryapptesting1/lib/views/auth_service.dart';
-import '../../../../../Downloads/groceryapptesting1/lib/main.dart';
+import 'auth_service.dart';
+import '../main.dart';
 
 class MyHomePage extends StatefulWidget {
   final bool isAdminLogin;
