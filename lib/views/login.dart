@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapptesting/views/auth_service.dart';
-import 'signUp.dart';
+import 'package:groceryapptesting/views/signUp.dart';
 
 class LoginPage extends StatefulWidget {
   @override
