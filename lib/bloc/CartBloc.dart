@@ -1,16 +1,16 @@
+import 'package:groceryapptesting/models/GroceryCart.dart';
+import 'package:groceryapptesting/models/GroceryOrder.dart';
+import 'package:groceryapptesting/models/GroceryProduct.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:grocerry_app/model/productModel.dart';
-import 'package:grocerry_app/model/orderModel.dart';
-import 'package:grocerry_app/model/cartModel.dart';
 
 class CartBloc{
 
   static int _orderId = 0;
   static CartBloc _cartBloc;
-  GroceryCart _currentCart;
-  productOrder _lastOrder;
-  PublishSubject<GroceryCart> _publishSubjectCart;
-  PublishSubject<productOrder> _publishSubjectOrder;
+  Cart _currentCart;
+  Order _lastOrder;
+  PublishSubject<Cart> _publishSubjectCart;
+  PublishSubject<Order> _publishSubjectOrder;
 
   factory CartBloc(){
     if(_cartBloc == null)
@@ -25,8 +25,8 @@ class CartBloc{
     _publishSubjectOrder = new PublishSubject<Order>();
   }
 
-  Stream<Cart> get observableCart => _publishSubjectCart.stream;
-  Stream<Order> get observableLastOrder => _publishSubjectOrder.stream;
+  Observable<Cart> get observableCart => _publishSubjectCart.stream;
+  Observable<Order> get observableLastOrder => _publishSubjectOrder.stream;
 
   void _updateCart(){
     _publishSubjectCart.sink.add(_currentCart);
@@ -49,6 +49,9 @@ class CartBloc{
   }
 
   Cart get currentCart => _currentCart;
+
+
+
 
   Order get lastOrder => _lastOrder;
 
