@@ -41,7 +41,6 @@ class _OrderViewState extends State<OrderView> {
                       child: Text('For Placing order',
                           style:
                               TextStyle(fontFamily: 'Trueno', fontSize: 40.0))),
-
                 ],
               )),
           SizedBox(height: 25.0),

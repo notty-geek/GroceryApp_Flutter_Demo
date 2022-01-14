@@ -81,7 +81,7 @@ class _SignupPageState extends State<SignupPage> {
                 this.email = value;
               },
               validator: (value) =>
-              value.isEmpty ? 'Email is required' : validateEmail(value)),
+                  value.isEmpty ? 'Email is required' : validateEmail(value)),
           TextFormField(
               decoration: InputDecoration(
                   labelText: 'PASSWORD',
@@ -97,7 +97,7 @@ class _SignupPageState extends State<SignupPage> {
                 this.password = value;
               },
               validator: (value) =>
-              value.isEmpty ? 'Password is required' : null),
+                  value.isEmpty ? 'Password is required' : null),
           SizedBox(height: 50.0),
           GestureDetector(
             onTap: () {

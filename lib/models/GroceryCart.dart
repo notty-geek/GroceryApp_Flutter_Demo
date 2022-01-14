@@ -1,25 +1,23 @@
 import 'package:groceryapptesting/models/GroceryOrder.dart';
 
-class Cart{
-
+class Cart {
   List<Order> _orders;
 
-  Cart(){
+  Cart() {
     _orders = new List();
   }
 
-  void addOrder(Order order){
+  void addOrder(Order order) {
     _orders.add(order);
   }
 
-  void removeOrder(Order order){
+  void removeOrder(Order order) {
     _orders.remove(order);
   }
 
-
-  double totalPrice(){
+  double totalPrice() {
     double total = 0;
-    _orders.forEach((o){
+    _orders.forEach((o) {
       total += o.orderPrice;
     });
 
@@ -31,5 +29,4 @@ class Cart{
   int get orderCount => _orders.length;
 
   bool get isEmpty => _orders.length == 0;
-
 }

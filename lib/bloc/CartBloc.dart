@@ -3,8 +3,7 @@ import 'package:groceryapptesting/models/GroceryOrder.dart';
 import 'package:groceryapptesting/models/GroceryProduct.dart';
 import 'package:rxdart/rxdart.dart';
 
-class CartBloc{
-
+class CartBloc {
   static int _orderId = 0;
   static CartBloc _cartBloc;
   Cart _currentCart;
@@ -12,14 +11,13 @@ class CartBloc{
   PublishSubject<Cart> _publishSubjectCart;
   PublishSubject<Order> _publishSubjectOrder;
 
-  factory CartBloc(){
-    if(_cartBloc == null)
-      _cartBloc = new CartBloc._();
+  factory CartBloc() {
+    if (_cartBloc == null) _cartBloc = new CartBloc._();
 
     return _cartBloc;
   }
 
-  CartBloc._(){
+  CartBloc._() {
     _currentCart = new Cart();
     _publishSubjectCart = new PublishSubject<Cart>();
     _publishSubjectOrder = new PublishSubject<Order>();
@@ -28,37 +26,33 @@ class CartBloc{
   Observable<Cart> get observableCart => _publishSubjectCart.stream;
   Observable<Order> get observableLastOrder => _publishSubjectOrder.stream;
 
-  void _updateCart(){
+  void _updateCart() {
     _publishSubjectCart.sink.add(_currentCart);
   }
 
-  void _updateLastOrder(){
+  void _updateLastOrder() {
     _publishSubjectOrder.sink.add(_lastOrder);
   }
 
-  void addOrderToCart(Product product, int quantity){
+  void addOrderToCart(Product product, int quantity) {
     _lastOrder = new Order(product, quantity, _orderId++);
     _currentCart.addOrder(_lastOrder);
     _updateLastOrder();
     _updateCart();
   }
 
-  void removerOrderOfCart(Order order){
+  void removerOrderOfCart(Order order) {
     _currentCart.removeOrder(order);
     _updateCart();
   }
 
   Cart get currentCart => _currentCart;
 
-
-
-
   Order get lastOrder => _lastOrder;
 
-  dispose(){
+  dispose() {
     _cartBloc = null;
     _publishSubjectCart.close();
     _publishSubjectOrder.close();
   }
-
 }

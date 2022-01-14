@@ -5,16 +5,16 @@ import 'package:groceryapptesting/views/login.dart';
 import 'package:groceryapptesting/views/Home.dart';
 
 class AuthService {
-
   handleAuth() {
     return StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, snapshot) {
-
-          if (snapshot.hasData ) {
+          if (snapshot.hasData) {
             if (snapshot.data.email == "admin@gmail.com") {
               print("In admin");
-              return MyHomePage(isAdminLogin: true,);
+              return MyHomePage(
+                isAdminLogin: true,
+              );
             }
 
             print("Not in Admin");
@@ -37,7 +37,6 @@ class AuthService {
       print('signed in');
     }).catchError((e) {
       print(e);
-
     });
   }
 
@@ -55,14 +54,14 @@ class AuthService {
 // Check result status
     switch (res.status) {
       case FacebookLoginStatus.success:
-      // Logged in
+        // Logged in
 
-      // Send access token to server for validation and auth
+        // Send access token to server for validation and auth
         final FacebookAccessToken accessToken = res.accessToken;
         final AuthCredential authCredential =
-        FacebookAuthProvider.credential(accessToken.token);
+            FacebookAuthProvider.credential(accessToken.token);
         final result =
-        await FirebaseAuth.instance.signInWithCredential(authCredential);
+            await FirebaseAuth.instance.signInWithCredential(authCredential);
 
         // Get profile data
         final profile = await fb.getUserProfile();
@@ -79,15 +78,12 @@ class AuthService {
 
         FirebaseAuth.instance.currentUser.updateEmail(email);
 
-
-
-
         break;
       case FacebookLoginStatus.cancel:
-      // User cancel log in
+        // User cancel log in
         break;
       case FacebookLoginStatus.error:
-      // Log in failed
+        // Log in failed
         print('Error while log in: ${res.error}');
         break;
     }

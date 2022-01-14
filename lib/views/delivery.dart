@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:groceryapptesting/views/orders.dart';
 
 class DeliveryPage extends StatefulWidget {
-
   @override
   _DeliveryPageState createState() => _DeliveryPageState();
 }
@@ -10,10 +9,9 @@ class DeliveryPage extends StatefulWidget {
 class _DeliveryPageState extends State<DeliveryPage> {
   final formKey = new GlobalKey<FormState>();
 
-  String email, full_name,address,pincode;
+  String email, full_name, address, pincode;
 
   Color greenColor = Color(0xFF00AF19);
-
 
   //To check fields during submiat
   checkFields() {
@@ -34,7 +32,6 @@ class _DeliveryPageState extends State<DeliveryPage> {
       return 'Enter Valid Email';
     else
       return null;
-
   }
 
   @override
@@ -76,7 +73,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
                 this.full_name = value;
               },
               validator: (value) =>
-              value.isEmpty ? 'Full Name is required' : null),
+                  value.isEmpty ? 'Full Name is required' : null),
           TextFormField(
               decoration: InputDecoration(
                   labelText: 'Address',
@@ -91,7 +88,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
                 this.address = value;
               },
               validator: (value) =>
-              value.isEmpty ? 'Address is required' : null),
+                  value.isEmpty ? 'Address is required' : null),
           TextFormField(
               decoration: InputDecoration(
                   labelText: 'Email',
@@ -106,7 +103,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
                 this.email = value;
               },
               validator: (value) =>
-              value.isEmpty ? 'Email is required' : validateEmail(value)),
+                  value.isEmpty ? 'Email is required' : validateEmail(value)),
           TextFormField(
               decoration: InputDecoration(
                   labelText: 'Pincode',
@@ -121,17 +118,15 @@ class _DeliveryPageState extends State<DeliveryPage> {
                 this.pincode = value;
               },
               validator: (value) =>
-              value.isEmpty ? 'Pincode is required' : null),
+                  value.isEmpty ? 'Pincode is required' : null),
           SizedBox(height: 50.0),
           GestureDetector(
             onTap: () {
-
               if (checkFields()) {
-
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => OrderView()),
-              );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OrderView()),
+                );
               }
             },
             child: Container(

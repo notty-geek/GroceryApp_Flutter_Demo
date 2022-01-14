@@ -45,7 +45,6 @@ class _CategoryDropMenu extends State<CategoryDropMenu> {
     double childAspectRatio = MediaQuery.of(context).size.width /
         (MediaQuery.of(context).size.height / 1.0);
 
-
     return new Column(children: <Widget>[
       new Container(
           height: _gridSize,
